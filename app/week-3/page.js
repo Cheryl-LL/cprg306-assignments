@@ -1,11 +1,12 @@
-import Item from "./item";
+import GoBackComponent from "../_components/go-back-component";
 import ItemList from "./item-list";
 
 export default function Page() {
     return (
         <main>
-            <h1>Shopping List</h1>
-            <Item/>
+            <h1 className="text-xl font-bold m-5">Shopping List</h1>
+            <ItemList />
+            <GoBackComponent />
         </main>
     );
 }

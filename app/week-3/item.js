@@ -1,13 +1,15 @@
-import ItemList from "./item-list";
-
-export default function Item() {
-    const item = {name, quantity, category};
+export default function Item({item}) {
+  let {name, quantity, category} = item;
 
   return (
     <div>
-        <p>{item.name}</p>
-        <p>{item.quantity}</p>
-        <p>{item.category}</p>
-    </div>
+          <main>
+            <div className="text-red-300 bg-slate-800 border border-cyan-100 m-5 p-5">
+              <p>Name: {name}</p>
+              <p>Quantity: {quantity}</p>
+              <p>Category: {category}</p>
+            </div>
+        </main>
+    </div>  
   );
 }

@@ -1,16 +1,11 @@
 import Link from "next/link";
 
 export default function GoBackComponent() {
-
-  const a = 3;
-  const b = 4
-
   return (
-    <div>
-      <div className="mt-10">
-          <Link href="../">Go Back</Link>
-        </div>
-        <p>{a} + {b} = {a+b}</p>
+    <div className="m-5">
+      <Link href="../" className="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700 transition">
+        Go Back
+      </Link>
     </div>
   );
 }

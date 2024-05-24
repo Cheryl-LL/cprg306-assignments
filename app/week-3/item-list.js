@@ -1,3 +1,4 @@
+import Item from "./item";
 
 export default function ItemList() {
     const item1 = {
@@ -71,4 +72,21 @@ export default function ItemList() {
         quantity: 4,
         category: "household",
       };
+
+      return (
+        <div>
+              <main>
+              <Item item={item1}/>
+              <Item item={item2}/>
+              <Item item={item3}/>
+              <Item item={item4}/>
+              <Item item={item5}/>
+              <Item item={item6}/>
+              <Item item={item7}/>
+              <Item item={item8}/>
+              <Item item={item9}/>
+              <Item item={item10}/>
+            </main>
+        </div>
+      );
 }
