@@ -86,6 +86,8 @@ export default function ItemList() {
               <Item item={item8}/>
               <Item item={item9}/>
               <Item item={item10}/>
+              <Item item={item11}/>
+              <Item item={item12}/>
             </main>
         </div>
       );

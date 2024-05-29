@@ -1,7 +1,7 @@
 import GoBackComponent from "../_components/go-back-component";
 import StudentInfo from "./student-info";
 
-export default function Page() {
+export default function Week2Page() {
     return (
       <main>
           <StudentInfo/>
