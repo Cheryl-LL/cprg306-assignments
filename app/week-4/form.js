@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function ItemForm() {
   const [itemName, setItemName] = useState("");
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState();
 
   const handleSubmit = (e) => {
@@ -19,7 +19,7 @@ export default function ItemForm() {
     );
 
     setItemName("");
-    setQuantity(0);
+    setQuantity(1);
     setCategory("");
   };
 
@@ -64,8 +64,10 @@ export default function ItemForm() {
               className="rounded-md mt-5 h-10 border border-indigo-600"
               onChange={handleCategory}
               value={category}
+              required
             >
-              <option value="produce">Produce</option>
+            <option value="" disabled selected>Category</option>
+              <option value="produce" >Produce</option>
               <option value="diary">Diary</option>
               <option value="bakery">Bakery</option>
               <option value="meat">Meat</option>
