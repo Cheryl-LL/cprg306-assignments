@@ -3,7 +3,7 @@ import StudentInfo from "./student-info";
 
 export default function Week2Page() {
     return (
-      <main>
+      <main className="m-5">
           <StudentInfo/>
         <GoBackComponent />
       </main>
