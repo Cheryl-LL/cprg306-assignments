@@ -36,7 +36,7 @@ export default function ItemForm({ closeForm, addItem }) {
   return (
     <div
       onClick={closeForm}
-      className="h-full w-full overflow-auto absolute flex justify-center items-center bg-gray-950/70"
+      className="h-full w-full absolute flex justify-center items-center bg-gray-950/70"
     >
       <section
         onClick={(e) => e.stopPropagation()}
