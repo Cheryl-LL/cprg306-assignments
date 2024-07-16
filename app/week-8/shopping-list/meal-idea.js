@@ -15,7 +15,6 @@ export default function MealIdea({ ingredient }) {
         console.log(`Error: ${response.statusText}`);
       }
       const data = await res.json();
-      console.dir(data);
       // return data;
       // use map to map each object as an array
       return data.meals;

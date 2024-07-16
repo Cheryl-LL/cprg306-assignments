@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import ItemForm from "./item-form";
-import itemDataJSON from "../data/items.json";
+import itemDataJSON from "../../data/items.json";
 import ItemCard from "./item-card";
+import MealIdea from "./meal-idea";
 
 export default function ItemList({onMealClick}) {
   const styledButton = "bg-indigo-600 rounded-md px-5 py-1 mx-3 text-white";

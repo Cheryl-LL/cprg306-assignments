@@ -55,6 +55,14 @@ export default function Home() {
             Week 7
             </Link>
         </div>
+        <div>
+          <Link 
+          className={styledLink}
+          href="./week-8"
+          >
+            Week 8
+            </Link>
+        </div>
         </div>
     </main>
   );
