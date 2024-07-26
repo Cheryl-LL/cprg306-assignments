@@ -12,7 +12,6 @@ const styledButton = "bg-indigo-600 rounded-md px-5 py-1 mx-3 text-white"
 
   useEffect(() => {
     setItemData(itemDataJSON);
-    console.log("useEffect runs");
   }, []);
 
   const handleSort = (sort) => {

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useUserAuth } from "./utils/auth-context";
 
-export default function Week8Page() {
+export default function Week10Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
   async function handleSignIn() {
@@ -22,6 +22,8 @@ export default function Week8Page() {
     }
   }
 
+  console.log(user)
+
   return (
     <div>
       <h1 className="m-5 text-3xl">Firebase Auth</h1>
@@ -34,7 +36,7 @@ export default function Week8Page() {
           </p>
           
           <div className="mt-3">
-            <Link className="mt-5 p-2 rounded-md border-2 border-rose-200 hover:bg-rose-400" href="/week-8/shopping-list/">Go to Week 8 Page</Link>
+            <Link className="mt-5 p-2 rounded-md border-2 border-rose-200 hover:bg-rose-400" href="/week-10/shopping-list/">Go to Week 10 Page</Link>
           </div>
           <div>
           <button onClick={handleSignOut} className="mt-5 p-2 rounded-sm bg-blue-500 text-white hover:bg-blue-400">Sign Out</button>

@@ -38,7 +38,6 @@ export default function ItemList({onMealClick}) {
 
   const handleCreateItem = (newItem) => {
     setItemData([...itemData, newItem]);
-    console.log(newItem);
   };
 
 

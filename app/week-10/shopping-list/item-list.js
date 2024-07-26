@@ -1,22 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
 import ItemForm from "./item-form";
-import itemDataJSON from "../../data/items.json";
 import ItemCard from "./item-card";
-import MealIdea from "./meal-idea";
 
-export default function ItemList({onMealClick}) {
+export default function ItemList({ items = [], onMealClick, onAddItem }) {
   const styledButton = "bg-indigo-600 rounded-md px-5 py-1 mx-3 text-white";
 
-  const [itemData, setItemData] = useState([]);
+  const [itemData, setItemData] = useState(items);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedIngredient, setSelectedIngredient] = useState("");
-  
-
 
   useEffect(() => {
-    setItemData(itemDataJSON);
-  }, []);
+    setItemData(items);
+  }, [items]);
 
   const handleSort = (sort) => {
     const sortedData = [...itemData].sort((a, b) => {
@@ -27,20 +22,13 @@ export default function ItemList({onMealClick}) {
     setItemData(sortedData);
   };
 
-  const handleMealClick = (ingredient) => {
-    const correctIngredient = ingredient.replace(/,.*/, "").replace(/\s*[\uD83C-\uDBFF\uDC00-\uDFFF]+/g, "").trim();
-    
-    setSelectedIngredient(correctIngredient);
-  };
-
   const handleClick = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
 
-  const handleCreateItem = (newItem) => {
-    setItemData([...itemData, newItem]);
+  const handleCreateItem = async (newItem) => {
+    await onAddItem(newItem);
+    setItemData((prevData) => [...prevData, newItem]);
   };
-
-
 
   return (
     <div className="">
@@ -72,13 +60,17 @@ export default function ItemList({onMealClick}) {
       </div>
 
       <div>
-        {itemData.map((item, index) => (
-          <ItemCard
-            key={index}
-            foodItem={item}
-            onClick={() => onMealClick(item.name)}
-          />
-        ))}
+        {itemData && itemData.length > 0 ? (
+          itemData.map((item, index) => (
+            <ItemCard
+              key={index}
+              foodItem={item}
+              onClick={() => onMealClick(item.name)}
+            />
+          ))
+        ) : (
+          <p>No items found.</p>
+        )}
       </div>
     </div>
   );
